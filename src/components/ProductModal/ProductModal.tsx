@@ -6,6 +6,8 @@ import { ProductPhotos } from './ProductPhotos'
 import { Description } from './Description'
 import { EnergyNutritional } from './EnergyNutritional'
 import { RelatedProducts } from './RelatedProducts'
+import likeIcon from '../../public/like-svgrepo-com.svg'
+import shareIcon from '../../public/share-ios-export-svgrepo-com.svg'
 import styles from './ProductModal.module.scss'
 
 // Пропущено: ProductVariations. Причина: компонент отсутствует в исходниках и на скриншоте.
@@ -57,7 +59,17 @@ export const ProductModal: FC<IProps> = ({ product, isOpen, onClose, relatedProd
                     &times;
                 </button>
                 <div className={styles.scrollContent}>
-                    <ProductPhotos images={product.images} />
+                    <div className={styles.photoWrapper}>
+                        <div className={styles.actionButtons}>
+                            <button className={styles.actionButton} aria-label="В избранное">
+                                <img src={likeIcon} width="20" height="20" alt="" />
+                            </button>
+                            <button className={styles.actionButton} aria-label="Поделиться">
+                                <img src={shareIcon} width="20" height="20" alt="" />
+                            </button>
+                        </div>
+                        <ProductPhotos images={product.images} />
+                    </div>
 
                     <div className={styles.content}>
                         <h2 id='product-modal-title' className={styles.title}>
@@ -106,9 +118,11 @@ export const ProductModal: FC<IProps> = ({ product, isOpen, onClose, relatedProd
                 <div className={styles.bottomBar}>
                     <div className={styles.priceBlock}>
                         <span className={styles.price}>
-                            {product.price.toLocaleString('ru-RU')}
+                            {product.price.toLocaleString('ru-RU')} &#8381;
                         </span>
-                        <span className={styles.priceUnit}>за 1 шт</span>
+                        <span className={styles.priceUnit}>
+                            за {getWeight(product.weight, product.ed_izm)}
+                        </span>
                     </div>
                     <button className={styles.addToCart}>В корзину</button>
                 </div>

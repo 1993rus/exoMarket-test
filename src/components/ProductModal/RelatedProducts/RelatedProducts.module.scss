@@ -11,7 +11,7 @@
 
 .list {
   display: flex;
-  gap: 12px;
+  gap: 24px;
   overflow-x: auto;
   padding: 0 16px;
   scrollbar-width: none;
@@ -22,11 +22,14 @@
 }
 
 .card {
-  flex: 0 0 140px;
-  max-width: 140px;
+  flex: 0 0 160px;
+  max-width: 160px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 10px 10px 12px;
+  background-color: #faf9f9;
+  border-radius: var(--radius-sm);
 }
 
 .cardImage {
@@ -34,7 +37,7 @@
   height: 140px;
   border-radius: var(--radius-sm);
   object-fit: cover;
-  background-color: var(--color-bg);
+  background-color: #e3e0e0;
 }
 
 .cardTitle,
@@ -55,7 +58,14 @@
 }
 
 .cardPrice {
-  @include text(14, 700);
+  @include text(13, 700);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  text-align: center;
+  margin-top: auto;
+  background-color: var(--color-white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .listWrapper {

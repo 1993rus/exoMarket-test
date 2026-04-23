@@ -42,7 +42,7 @@ export const RelatedProducts: FC<IProps> = ({ products }) => {
                             />
                             <span className={styles.cardTitle}>{product.title}</span>
                             <span className={styles.cardWeight}>{product.weight}</span>
-                            <span className={styles.cardPrice}>{`${product.price} р`}</span>
+                            <span className={styles.cardPrice}>{`${product.price} \u20BD`}</span>
                         </div>
                     ))}
                 </div>
