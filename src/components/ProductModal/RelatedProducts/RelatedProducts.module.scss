@@ -1,0 +1,96 @@
+@use '../../../styles/mixins' as *;
+
+.container {
+  margin-top: 24px;
+}
+
+.heading {
+  @include text(20, 700);
+  margin: 0 0 16px 16px;
+}
+
+.list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 16px;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.card {
+  flex: 0 0 140px;
+  max-width: 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardImage {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background-color: var(--color-bg);
+}
+
+.cardTitle,
+.cardWeight,
+.cardPrice {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardTitle {
+  @include text(13, 500);
+}
+
+.cardWeight {
+  @include text(12, 400);
+  color: var(--color-gray);
+}
+
+.cardPrice {
+  @include text(14, 700);
+}
+
+.listWrapper {
+  position: relative;
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+
+  .listWrapper:hover & {
+    opacity: 1;
+  }
+}
+
+.arrowLeft {
+  left: 4px;
+}
+
+.arrowRight {
+  right: 4px;
+}

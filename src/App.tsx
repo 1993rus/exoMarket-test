@@ -1,24 +1,18 @@
-import { type FC } from 'react'
-import { Description } from './components/ProductModal/Description'
-import { EnergyNutritional } from './components/ProductModal/EnergyNutritional'
-import { ProductPhotos } from './components/ProductModal/ProductPhotos'
-import { mockProduct } from './mocks/product'
+import { useState, type FC } from 'react'
+import { ProductModal } from './components/ProductModal'
+import { mockProduct, mockRelatedProducts } from './mocks/product'
 
 export const App: FC = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
     return (
-        <div style={{ maxWidth: 400, margin: '20px auto' }}>
-            <ProductPhotos images={mockProduct.images} />
-
-            <Description
-                storage={mockProduct.storage}
-                sostav={mockProduct.sostav}
-            />
-
-            <EnergyNutritional
-                cal={mockProduct.calories_amount}
-                prot={mockProduct.bel_amount}
-                fats={mockProduct.fats_amount}
-                carb={mockProduct.ugl_amount}
+        <div>
+            <button onClick={() => setIsModalOpen(true)}>Открыть товар</button>
+            <ProductModal
+                product={mockProduct}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                relatedProducts={mockRelatedProducts}
             />
         </div>
     )
