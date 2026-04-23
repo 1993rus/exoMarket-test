@@ -1,0 +1,135 @@
+@use '../../../styles/mixins' as *;
+
+.container {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border: 1px solid var(--color-black);
+  background-color: var(--color-gray-01);
+  width: 100%;
+}
+
+.title {
+  @include text(20, 900);
+  margin: 2px 12px 4px;
+  white-space: pre-line;
+}
+
+.decoration {
+  height: 1px;
+  background-color: var(--color-black);
+  margin: 0 10px;
+}
+
+.decorationBold {
+  height: 3px;
+  background-color: var(--color-black);
+  margin: 0 10px;
+}
+
+.wrapWeight {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-black);
+  margin: 0 10px;
+}
+
+.weightLabel {
+  @include text(12, 500);
+  margin-left: 2px;
+}
+
+.wrapCal {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-orange-04);
+  height: 28px;
+}
+
+.cal {
+  @include text(15, 700);
+  width: 60%;
+  padding-left: 12px;
+}
+
+.calValue {
+  @include text(15, 900);
+  width: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.containerDaily {
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+}
+
+.empty {
+  width: 55%;
+}
+
+.wrapDaily {
+  width: 45%;
+  height: 100%;
+  background-color: var(--color-blue-01);
+  display: flex;
+  align-items: center;
+}
+
+.dailyLabel {
+  @include text(12, 500);
+  margin-left: 15px;
+}
+
+.wrapRow {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  background-color: var(--color-green-03);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rowTitle {
+  @include text(14, 700);
+  margin-left: 12px;
+}
+
+.wrapValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+}
+
+.weightText {
+  @include text(14, 700);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapPercent {
+  background-color: var(--color-blue-01);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+}
+
+.percentText {
+  @include text(14, 700);
+  white-space: nowrap;
+}
+
+.disclaimer {
+  @include text(12, 500);
+  color: var(--color-gray);
+  padding: 14px;
+  margin: 0;
+}

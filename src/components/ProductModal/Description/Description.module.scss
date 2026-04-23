@@ -1,0 +1,20 @@
+@use '../../../styles/mixins' as *;
+
+.container {
+  margin-top: 24px;
+}
+
+.heading {
+  @include text(15, 700);
+  color: var(--color-black-02);
+  margin: 0;
+
+  & + & {
+    margin-top: 24px;
+  }
+}
+
+.text {
+  @include text(14, 400, 17px);
+  margin: 10px 0 0;
+}
