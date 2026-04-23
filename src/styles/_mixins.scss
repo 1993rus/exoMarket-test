@@ -1,0 +1,5 @@
+@mixin text($size, $weight, $line-height: normal) {
+  font-size: #{$size}px;
+  font-weight: $weight;
+  line-height: $line-height;
+}
